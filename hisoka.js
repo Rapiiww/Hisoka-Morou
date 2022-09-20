@@ -1203,7 +1203,7 @@ break
                             }, {
                                 callButton: {
                                     displayText: 'Number Phone Owner',
-                                    phoneNumber: '+62 882-9202-4190'
+                                    phoneNumber: '+62 858-7005-4532'
                                 }
                             }, {
                                 quickReplyButton: {
@@ -1242,7 +1242,7 @@ break
                             }, {
                                 callButton: {
                                     displayText: 'Number Phone Owner',
-                                    phoneNumber: '+62 882-9202-4190'
+                                    phoneNumber: '+62 858-7005-4532'
                                 }
                             }, {
                                 quickReplyButton: {
@@ -3107,7 +3107,7 @@ let capt = `⭔ Title: ${judul}
                             }, {
                                 callButton: {
                                     displayText: 'Number Phone Owner',
-                                    phoneNumber: '+62 882-9202-4190'
+                                    phoneNumber: '+62 858-7005-4532'
                                 }
                             }, {
                                 quickReplyButton: {
