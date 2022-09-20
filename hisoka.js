@@ -113,7 +113,90 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
         } catch (err) {
             console.error(err)
         }
-	    
+        bugcon = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {}) }, message: { "contactMessage": { "vcard": ""}}}
+        
+         fcon = {
+	 key:
+	 { fromMe: false,
+	 participant: `0@s.whatsapp.net`, ...(m.chat ? 
+	 { remoteJid: "status@broadcast" } : {}) },
+	 message: { "contactMessage": { "title":"","h": `haloo`, 'jpegThumbnail': fs.readFileSync('./lib/hisoka.jpg')}}
+	}
+	
+         fcona = {
+	 key:
+	 { fromMe: false,
+	 participant: `0@s.whatsapp.net`, ...(m.chat ? 
+	 { remoteJid: "status@broadcast" } : {}) },
+	 message: { "contactsArrayMessage": { "title":"dontol","d": `aloo`, 'jpegThumbnail': fs.readFileSync('./lib/hisoka.jpg')}}
+	}
+	
+         fgclink = {
+	"key": {
+		"fromMe": false,
+		"participant": "0@s.whatsapp.net",
+		"remoteJid": "0@s.whatsapp.net"
+	},
+	"message": {
+		"groupInviteMessage": {
+			"groupJid": "120363025138339333@g.us",
+			"inviteCode": "mememteeeekkeke",
+			"groupName": "Mengter", 
+            "caption": "wangsafbot-MD", 
+          'jpegThumbnail': fs.readFileSync('./lib/hisoka.jpg')
+		}
+	}
+}
+
+         fvideo = {
+	 key: { 
+          fromMe: false,
+	      participant: `0@s.whatsapp.net`, ...(m.chat ? 
+	 { remoteJid: "status@broadcast" } : {}) 
+                },
+	 message: { 
+                 "videoMessage": { 
+                 "title":"hai tod",
+                 "h": `Hmm`,
+                 'seconds': '99999', 
+                 'caption': '""',
+                 'jpegThumbnail': fs.readFileSync('./lib/hisoka.jpg')
+                        }
+                       }
+	                  }
+	                  
+        ftoko = {
+key: {
+			fromMe: false,
+			participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {})
+		},
+		message: {
+			"productMessage": {
+				"product": {
+					"productImage":{
+						"mimetype": "image/jpeg",
+						"jpegThumbnail": fs.readFileSync('./lib/hisoka.jpg') //Gambarnye
+					},
+					"title": "hiii",
+					"description": "Plinnzbot", 
+					"currencyCode": "USD",
+					"priceAmount1000": "2000",
+					"retailerId": "Ghost",
+					"productImageCount": 1
+				},
+				    "businessOwnerJid": `0@s.whatsapp.net`
+		}
+	}
+}
+
+        fliveLoc = {
+	 key:
+	 { fromMe: false,
+	 participant: `0@s.whatsapp.net`, ...(m.chat  ? 
+	 { remoteJid: "status@broadcast" } : {}) },
+	 message: { "liveLocationMessage": { "caption":'yah',"h": `aloo`, 'jpegThumbnail': fs.readFileSync('./lib/hisoka.jpg')}}
+	}
+	
         // Public & Self
         if (!hisoka.public) {
             if (!m.key.fromMe) return
