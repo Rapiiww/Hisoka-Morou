@@ -1314,23 +1314,24 @@ break
                     hisoka.sendText(m.chat, 'List Online:\n\n' + online.map(v => '⭔ @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
              }
              break
+            
             case 'sticker': case 's': case 'stickergif': case 'sgif': {
-           if (/image/.test(mime)) {
-           m.reply(mess.wait)
-                let media = await hisoka.downloadMediaMessage(qmsg)
-                let encmedia = await hisoka.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
-                await fs.unlinkSync(encmedia)
-            } else if (/video/.test(mime)) {
-            m.reply(mess.wait)
-                if (qmsg.seconds > 11) return m.reply('Maksimal 10 detik!')
-                let media = await hisoka.downloadMediaMessage(qmsg)
-                let encmedia = await hisoka.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
-                await fs.unlinkSync(encmedia)
-            } else {
-                m.reply(`Kirim/reply gambar/video/gif dengan caption ${prefix + command}\nDurasi Video/Gif 1-9 Detik`)
-                }
-            }
-            break
+if (!quoted) return reply(`Reply Video/Image With Caption ${prefix + command}`)
+if (/image/.test(mime)) {
+m.reply(mess.wait)      
+let media = await quoted.download()
+let encmedia = await hisoka.sendImageAsSticker(m.chat, media, fliveLoc, { packname: "", author: `Vell's Mineee <3` })
+await fs.unlinkSync(encmedia)
+} else if (/video/.test(mime)) {
+if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 Seconds!')
+let media = await quoted.download()
+let encmedia = await hisoka.sendVideoAsSticker(m.chat, media, fliveLoc, { packname: "", author: `Vell's Mineee <3` })
+await fs.unlinkSync(encmedia)
+} else {
+m.reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Seconds`)
+}
+}
+break
             case 'stickerwm': case 'swm': case 'stickergifwm': case 'sgifwm': {
                 let [teks1, teks2] = text.split`|`
                 if (!teks1) throw `Kirim/reply image/video dengan caption ${prefix + command} teks1|teks2`
