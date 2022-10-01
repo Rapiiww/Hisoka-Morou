@@ -1403,7 +1403,7 @@ if (!quoted) return reply(`Reply Video/Image With Caption ${prefix + command}`)
 if (/image/.test(mime)) {
 m.reply(mess.wait)      
 let media = await quoted.download()
-let encmedia = await hisoka.sendImageAsSticker(m.chat, media, fliveLoc, { packname: "", author: `Vell's Mineee <3` })
+let encmedia = await hisoka.sendImageAsSticker(m.chat, media, fliveLoc, { packname: "", author: `RREbot-MD` })
 await fs.unlinkSync(encmedia)
 } else if (/video/.test(mime)) {
 if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 Seconds!')
